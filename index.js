@@ -9,7 +9,7 @@ const app = express();
 require('dotenv').config()
 
 const dbString = process.env.MONGODB_URI;
-const port = process.env.PORT;
+const port = process.env.PORT || 4000;
 app.use(express.json());
 
 app.get("/", async (req, res) => {
