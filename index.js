@@ -4,7 +4,12 @@ const Partner = require('./models/partner.model.js');
 const Product = require("./models/product.model.js");
 const Course = require("./models/course.model.js");
 const Schedule = require("./models/schedule.model.js");
+const cors = require('cors');
+
 const app = express();
+
+// setting enabling the CORS 
+app.use(cors())
 
 require('dotenv').config()
 
