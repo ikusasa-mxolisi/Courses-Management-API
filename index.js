@@ -318,7 +318,7 @@ app.get('/api/schedules/courses/:id', async (req, res) => {
 })
 
 
-mongoose.connect("mongodb://localhost:27017/27017")
+mongoose.connect("mongodb://mxolisinkosi2360:DTLQnrMZf30oRN5Q@ikusasa-shard-00-00.c4jic.mongodb.net:27017,ikusasa-shard-00-01.c4jic.mongodb.net:27017,ikusasa-shard-00-02.c4jic.mongodb.net:27017/?ssl=true&replicaSet=atlas-i1lvpx-shard-0&authSource=admin&retryWrites=true&w=majority&appName=Ikusasa")
 .then(() =>{ 
     console.log("connected");
     app.listen(3000, ()=> {
