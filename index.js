@@ -6,6 +6,10 @@ const Course = require("./models/course.model.js");
 const Schedule = require("./models/schedule.model.js");
 const app = express();
 
+require('dotenv').config()
+
+const dbString = process.env.MONGODB_URI;
+const port = process.env.PORT;
 app.use(express.json());
 
 app.get("/", async (req, res) => {
@@ -318,10 +322,10 @@ app.get('/api/schedules/courses/:id', async (req, res) => {
 })
 
 
-mongoose.connect("mongodb://mxolisinkosi2360:DTLQnrMZf30oRN5Q@ikusasa-shard-00-00.c4jic.mongodb.net:27017,ikusasa-shard-00-01.c4jic.mongodb.net:27017,ikusasa-shard-00-02.c4jic.mongodb.net:27017/?ssl=true&replicaSet=atlas-i1lvpx-shard-0&authSource=admin&retryWrites=true&w=majority&appName=Ikusasa")
+mongoose.connect(dbString)
 .then(() =>{ 
     console.log("connected");
-    app.listen(3000, ()=> {
+    app.listen(port, ()=> {
         console.log("The app is running on port 3000");
     })
 
