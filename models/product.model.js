@@ -12,6 +12,10 @@ const ProductSchema = mongoose.Schema(
             type: String,
             required: [true, "Please provide the product's name"],
             lowercase: true,
+        },
+        image: {
+            type: String,
+            required: false,
         }
     }
 )
